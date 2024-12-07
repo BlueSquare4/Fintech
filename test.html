@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinTech Revolution</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="assets/logo.png" alt="FinTech Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+          <div class="hero-left">
+            <h1 data-aos="fade-up" style="color: cadetblue;">What is Your Financial Score?</h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                <span id="typed-output"></span>
+            </p>
+            <div class="button-group" data-aos="fade-up" data-aos-delay="400">
+              <button class="hero-btn primary">Calculate Your Score</button>
+              <button class="hero-btn secondary">Learn More</button>
+            </div>
+          </div>
+          <div class="hero-right" data-aos="fade-left">
+            <img src="assets/land.png" alt="Financial Illustration" class="hero-illustration" />
+          </div>
+        </div>
+      </section>
+
+  </header>
+
+  <canvas id="threejs-canvas"></canvas> <!-- Make sure this canvas is after header to act as background -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // Three.js Animation
+    const canvas = document.getElementById("threejs-canvas");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+    const material = new THREE.MeshBasicMaterial({ color: 0xD2B48C, wireframe: true });
+    const torus = new THREE.Mesh(geometry, material);
+
+    scene.add(torus);
+    camera.position.z = 30; //this changes the size of the donut
+
+    function animate() {
+      requestAnimationFrame(animate);
+      torus.rotation.x += 0.01;
+      torus.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

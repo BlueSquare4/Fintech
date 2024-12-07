@@ -1,0 +1,792 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling by default */
+  }
+  
+  #top-section, #bottom-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #top-section {
+    background: linear-gradient(to bottom right, #000000, #1b1b1b);
+  }
+  
+  #bottom-section {
+    /* background: linear-gradient(to top right, #32CD32, #004400); */
+    color: black;
+  }
+  
+  /* Light-Speed Effect */
+  #light-speed-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  .streak {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: white;
+    opacity: 0.8;
+    animation: streak-animation 0.8s linear;
+  }
+  
+  @keyframes streak-animation {
+    0% {
+      top: -100%;
+      transform: translateX(0);
+      opacity: 0.8;
+    }
+    100% {
+      top: 100%;
+      transform: translateX(calc(50vw - 50%));
+      opacity: 0;
+    }
+  }
+  
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #FFFDD0;
+  }
+  
+  nav .logo {
+    height: 50px;
+  }
+  
+  nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav .nav-links li {
+    display: inline;
+  }
+  
+  nav .nav-links a {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav .nav-links :hover{
+    color: #FFC107;
+  }
+  
+  /* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffdd0; /* Cream background */
+    padding: -5rem 2rem;
+    position: relative;
+    height: 75vh;
+    text-align: left;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .hero-left {
+    flex: 1;
+  }
+  
+  .hero-left h1 {
+    font-size: 3rem;
+    color: cadetblue;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-left p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .hero-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .hero-btn.primary {
+    background: #32cd32; /* Green color */
+    color: white;
+  }
+  
+  .hero-btn.primary:hover {
+    background: #28a745;
+  }
+  
+  .hero-btn.secondary {
+    background: transparent;
+    color: cadetblue;
+    border: 2px solid cadetblue;
+  }
+  
+  .hero-btn.secondary:hover {
+    background: cadetblue;
+    color: white;
+  }
+  
+  .hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-illustration {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-left h1 {
+      font-size: 2.5rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .hero-right {
+      margin-top: 2rem;
+    }
+  }
+  
+  
+  #threejs-canvas {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+/* Features Section */
+/* .features {
+    padding: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .feature-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 20px;
+    background: rgba(0, 255, 0, 0.1);  Slight green tint 
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .mobile-display {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobile-canvas {
+    width: 300px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+   */
+/* General Styles */
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(to left, #fffdd0, #f2efb6); /* Soft gradient background */
+  }
+  
+  .feature-item {
+    perspective: 1000px; /* Enable 3D effect for flipping */
+  }
+  
+  .card {
+    width:300px;
+    height: 200px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.8s ease-in-out;
+    cursor:pointer;
+  }
+  
+  .card:hover {
+    transform:rotateY(180deg); /* Flip card on hover */
+  }
+  
+  /* Card Front */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility:inherit; /* Hides the back of the card when not flipped */
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-front {
+    background: rgba(255, 255, 255, 0.6); /* Glassy look */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 2; /* Ensure the front card is visible when not flipped */
+  }
+  
+  .card-back {
+    background: rgba(50, 115, 220, 0.6); /* Slightly tinted glassy look */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(50, 115, 220, 0.2);
+    color: white;
+    transform: rotateY(180deg); /* Initially hidden; will show on flip */
+    z-index: 1; /* Behind the front card initially */
+  }
+  
+  /* Card Text */
+  .card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00796b; /* Subtle green for the title */
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-front p,
+  .card-back p {
+    font-size: 1rem;
+    color: #424242;
+  }
+  
+  .card-back p {
+    color: #ffffff; /* White text for better contrast */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .feature-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .trading-essential-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #f8f9fa; /* Light cream background */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .content-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .text-content {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .text-content h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .text-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+  }
+  
+  .svg-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+ 
+ 
+  /* Financial Score Section */
+#financial-score {
+    background: #f0f8ff; /* Light background for contrast */
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    min-height: 300px;
+  }
+  
+  #financial-score .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .doodle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .doodle {
+    position: relative;
+    animation: bounce 1s ease-in-out infinite;
+  }
+  
+  .doodle-image {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+  }
+  
+  .text-content {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .text-content h2 {
+    font-size: 2.5rem;
+    color: #32CD32; /* Fintech green color */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .text-content p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    animation: fadeInUp 1.2s ease-in-out;
+  }
+  
+  .calculate-btn {
+    background-color: #32CD32;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .calculate-btn:hover {
+    background-color: #28a745; /* Darker green on hover */
+  }
+  
+  /* Animation Effects */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .doodle-image {
+      width: 150px; /* Adjust for mobile size */
+      height: 150px;
+    }
+  
+    .text-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    .text-content p {
+      font-size: 1rem;
+    }
+  
+    .calculate-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* courses */
+  
+  .fintech-section {
+    background-color: #F4F1E1;  /* Creamy background */
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.fintech-animations {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.animation-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 22%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.animation-item:hover {
+    transform: translateY(-10px);
+}
+
+.animation-svg-container {
+    margin-bottom: 20px;
+}
+
+.animation-svg {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.animation-description p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #0080cc;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #006bb3;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* graph */
+.financial-graph-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.graph-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.financial-graph {
+    width: 100%;
+    height: 300px;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.graph-interpretation {
+    text-align: left;
+    margin-top: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.graph-interpretation h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.graph-interpretation p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.btn-cta {
+    padding: 12px 25px;
+    background-color: #0080cc;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #006bb3;
+}
+
+@keyframes financialGraphAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* footer */
+
+.footer {
+    background-color: #f5f5f0;  /* Creamy background */
+    padding: 60px 20px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.footer-left {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 600px;
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #00b894;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #008e6b;
+}
+
+.footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.doodle-img {
+    max-width: 200px;
+    height: auto;
+}
+.doodle-img2 {
+    padding-left: 30px;
+    max-width: 600px;
+    height: auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
