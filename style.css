@@ -17,10 +17,10 @@ body {
     background: linear-gradient(to bottom right, #000000, #1b1b1b);
   }
   
-  #bottom-section {
+  /* #bottom-section { */
     /* background: linear-gradient(to top right, #32CD32, #004400); */
-    color: black;
-  }
+    /* color: black;
+  } */
   
   /* Light-Speed Effect */
   #light-speed-effect {
@@ -501,6 +501,85 @@ body {
       font-size: 1rem;
     }
   }
+
+  /* youtube inti */
+  .evaluate-learn-grow {
+    /* background-color: #f5f5f0; */ 
+    background: linear-gradient(to left, #f2efb6, #fffdd0); /* Creamy background */
+    color: #333; /* Dark text */
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .text-section {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .tagline {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .tagline span {
+    color: #555;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .torus-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .torus-svg {
+    width: 200px;
+    height: 200px;
+    animation: rotate 6s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .video-section {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .youtube-video {
+    width: 100%;
+    height: 225px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
 
   /* courses */
   
